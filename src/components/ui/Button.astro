@@ -1,0 +1,286 @@
+---
+// Button
+// ------------
+// Description: Buttons are interactive elements activated by a user with a mouse, keyboard, or tap
+// Properties:
+// - Type: the type of the button (link, button, submit, reset). If its type is link, the button will be rendered as an anchor tag
+// - Size: the size of the button (lg, base, sm)
+// - Link: the link of the button (if type is link)
+// - Modal: The id of the modal that the button can trigger (optional)
+// - Style: the style of the button (primary, secondary, neutral)
+// - Variation: the variation of the button (defaultoutline, link)
+// - Elevated: whether the button is elevated or not (optional)
+// - classes: additional classes
+// Reference: https://wind-ui.com/components/buttons/
+
+// Props
+type Props = {
+	type?: 'link' | 'button' | 'submit' | 'reset'
+	size?: 'lg' | 'base' | 'sm'
+	link?: string
+	modal?: string
+	style?: 'primary' | 'secondary' | 'neutral'
+	variation?: 'outline' | 'link'
+	elevated?: boolean
+	classes?: string
+}
+const {
+	type = 'button',
+	size = 'base',
+	link,
+	modal,
+	style = 'primary',
+	variation,
+	elevated,
+	classes
+} = Astro.props
+---
+
+{
+	type === 'link' || link ? (
+		<a
+			href={link}
+			class:list={[
+				'button',
+				{ ['button--' + `${size}`]: size },
+				{ ['button--' + `${style}`]: style },
+				{ ['button--' + `${variation}`]: variation },
+				{ ['button--elevated']: elevated },
+				{ [`${classes}`]: classes }
+			]}
+		>
+			<slot />
+		</a>
+	) : (
+		<button
+			type={type}
+			class:list={[
+				'button',
+				{ ['button--' + `${size}`]: size },
+				{ ['button--' + `${style}`]: style },
+				{ ['button--' + `${variation}`]: variation },
+				{ ['button--elevated']: elevated },
+				{ [`${classes}`]: classes }
+			]}
+			{...(modal ? { 'data-modal': modal } : {})}
+		>
+			<slot />
+		</button>
+	)
+}
+<style>
+/* ====================================================== */
+/*  BUTTONS                                               */
+/* ====================================================== */
+
+/* ==== Principal ==== */
+.button {
+	display: inline-flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	white-space: nowrap;
+	border-radius: 0.25rem;
+	font-weight: 700;
+	letter-spacing: 0.025em;
+	transition: all 0.3s ease;
+	outline: none;
+}
+
+.button:disabled {
+	cursor: not-allowed;
+	box-shadow: none;
+}
+
+/* ==== Size Variants ==== */
+.button--lg {
+	height: 3rem; /* h-12 */
+	padding: 0 1.5rem; /* px-6 */
+	font-size: 0.875rem; /* text-sm */
+}
+
+.button--base {
+	height: 2.5rem; /* h-10 */
+	padding: 0 1.25rem; /* px-5 */
+	font-size: 0.875rem; /* text-sm */
+}
+
+.button--sm {
+	height: 2rem; /* h-8 */
+	padding: 0 1rem; /* px-4 */
+	font-size: 0.75rem; /* text-xs */
+}
+
+/* ==== Outline Variant ==== */
+.button--outline {
+	border-width: 1px;
+	border-style: solid;
+}
+
+/* ==== Link Variant ==== */
+.button--link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.5rem;
+	padding: 0;
+	font-weight: 400;
+	background: transparent;
+	border: none;
+}
+
+/* ==== Primary Buttons ==== */
+.button--primary {
+	background-color: #E2187D; /* primary-500 */
+	color: #ffffff;
+	border: none;
+}
+
+.button--primary:hover {
+	background-color: #be185d; /* primary-700 */
+}
+
+.button--primary:focus {
+	background-color: #be185d; /* primary-700 */
+}
+
+.button--primary:disabled {
+	background-color: #fbcfe8; /* primary-300 */
+	border-color: #fbcfe8;
+}
+
+/* Elevated variant */
+.button--primary.button--elevated {
+	box-shadow: 0 10px 15px -3px rgba(226, 24, 125, 0.3);
+}
+.button--primary.button--elevated:hover,
+.button--primary.button--elevated:focus {
+	box-shadow: 0 6px 10px -3px rgba(226, 24, 125, 0.3);
+}
+
+/* Outline variant */
+.button--primary.button--outline {
+	border-color: #E2187D;
+	background-color: transparent;
+	color: #E2187D;
+}
+.button--primary.button--outline:hover {
+	border-color: #be185d;
+	color: #be185d;
+}
+
+/* Link variant */
+.button--primary.button--link {
+	background: transparent;
+	color: #E2187D;
+}
+.button--primary.button--link:hover,
+.button--primary.button--link:focus {
+	color: #be185d;
+}
+
+/* ==== Secondary Buttons ==== */
+.button--secondary {
+	background-color: #fdf2f8; /* primary-50 */
+	color: #E2187D; /* primary-500 */
+}
+
+.button--secondary:hover {
+	background-color: #fce7f3; /* primary-100 */
+	color: #db2777; /* primary-600 */
+}
+
+.button--secondary:focus {
+	background-color: #fbcfe8; /* primary-200 */
+	color: #be185d; /* primary-700 */
+}
+
+.button--secondary:disabled {
+	border-color: #fbcfe8; /* primary-300 */
+	background-color: #fce7f3; /* primary-100 */
+	color: #f472b6; /* primary-400 */
+}
+
+/* Elevated variant */
+.button--secondary.button--elevated {
+	box-shadow: 0 10px 15px -3px rgba(226, 24, 125, 0.3);
+}
+.button--secondary.button--elevated:hover,
+.button--secondary.button--elevated:focus {
+	box-shadow: 0 6px 10px -3px rgba(226, 24, 125, 0.3);
+}
+
+/* Outline variant */
+.button--secondary.button--outline {
+	border-color: #E2187D;
+	background: transparent;
+	color: #E2187D;
+}
+.button--secondary.button--outline:hover {
+	border-color: #be185d;
+	color: #be185d;
+}
+
+/* Link variant */
+.button--secondary.button--link {
+	background: transparent;
+	color: #E2187D;
+}
+.button--secondary.button--link:hover,
+.button--secondary.button--link:focus {
+	color: #be185d;
+}
+
+/* ==== Neutral Buttons ==== */
+.button--neutral {
+	background-color: #334155; /* neutral-700 */
+	color: #ffffff;
+}
+
+.button--neutral:hover {
+	background-color: #1e293b; /* neutral-800 */
+}
+
+.button--neutral:focus {
+	background-color: #0f172a; /* neutral-900 */
+}
+
+.button--neutral:disabled {
+	background-color: #cbd5e1; /* neutral-300 */
+	border-color: #cbd5e1;
+}
+
+/* Elevated variant */
+.button--neutral.button--elevated {
+	box-shadow: 0 10px 15px -3px rgba(100, 116, 139, 0.3);
+}
+.button--neutral.button--elevated:hover,
+.button--neutral.button--elevated:focus {
+	box-shadow: 0 6px 10px -3px rgba(100, 116, 139, 0.3);
+}
+
+/* Outline variant */
+.button--neutral.button--outline {
+	border-color: #334155;
+	background-color: transparent;
+	color: #334155;
+}
+.button--neutral.button--outline:hover {
+	border-color: #1e293b;
+  	color: #1e293b;
+}
+
+/* Link variant */
+.button--neutral.button--link {
+	background: transparent;
+	color: #334155;
+}
+.button--neutral.button--link:hover {
+	color: #1e293b;
+}
+.button--neutral.button--link:focus {
+	color: #0f172a;
+}
+
+</style>

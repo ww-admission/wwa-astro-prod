@@ -1,0 +1,54 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Hero from '../components/blocks/hero/PageHeader.astro'
+import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
+import TextImage from '../components/blocks/basic/TextImage.astro'
+import CTA from '../components/blocks/CTA/BasicDark.astro'
+
+// Data
+import faqData from '../data/json-files/faqData.json'
+// - FAQ Categories
+const faqPricing = faqData.filter((faq) => faq.category === 'pricing')
+const faqIntegrations = faqData.filter((faq) => faq.category === 'integrations')
+
+// Content
+import faqImage1 from '../assets/faq/faq-01.png'
+// - SEO
+const SEO = {
+	title: 'WWA | Foire aux questions',
+	description:
+		'Plongez dans la foire aux questions WWA pour obtenir des réponses à toutes vos questions sur les tarifs, les universités, l\'accompagnement World Wise Admission et bien plus encore.'
+}
+// - Page Header
+const header = {
+	title: 'Les réponses aux questions sur <strong>WWA</strong> et bien plus.',
+	text: 'Trouvez les réponses que questions les plus fréquement posées '
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={header.title} text={header.text} />
+	<FAQ
+		title="Combien ça coûte d'être accompagné par WWA ? "
+		text="Obtenez tous les détails sur les plans tarifaires de World Wise Admission. Découvrez les coûts, les réductions et les options de financement pour trouver le plan qui correspond le mieux à votre souhait et à votre budget."
+		data={faqPricing}
+	/>
+	<TextImage
+		title="Quel est l'intérêt d'être accompagné par WWA pour candidater à des universités ?"
+		text="Chez World Wise Admission, nous croyons que tous les étudiants devraient avoir accès aux études qu'ils souhaitent. Entre complexité administratives des démarches de candidature, la rétention d'informations constament changeantes et les limites liées aux finances, World Wise Admission accompagne les étudiants pour permettre à tout un chacun d'accéder aux universités les plus prestigieuses dans les meileurs destinations d'étude. "
+		image={faqImage1}
+		mobileImage={faqImage1}
+		imagePosition="left"
+		offsetImage
+		classes="bg-neutral-50 dark:bg-neutral-900 lg:!py-64"
+	/>
+	<FAQ
+		title="Les avantages et bénéfices de WWA"
+		text="Découvrez comment World Wise Admission favorise l'insertion académique des jeunes bacheliers, diplômés. Mets l'accent sur les léments essentiels pour commencer et pursuivre son parcours académique dans les meeilleurs conditions possibles favorisant ainssi le bien être des étudiants dans leur destination académique et augmentant leur taux de réussite universitaire."
+		data={faqIntegrations}
+	/>
+	<CTA />
+</Layout>

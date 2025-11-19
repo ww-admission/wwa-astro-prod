@@ -1,0 +1,72 @@
+---
+// Basic Cards grid Section
+// ------------
+// Description: A grid of cards with basic contact information in a 4 column layout.
+// Properties:
+// - classes: Additional classes to be added to the Section
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Card from '../../ui/cards/BasicCard.astro'
+
+// 	Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<Section id="requests" classes={classes}>
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-balance">Un besoin spécifique ? Nous sommes là pour <strong>vous aider</strong> !</h2>
+			<p class="pb-0 text-lg">
+				Sélectionnez l'une des options ci-dessous pour obtenir l'aide dont vous avez besoin. 
+				Qu'il s'agisse de support client, de demandes prix sur notre accompagnement, de suggestions de fonctionnalités ou de retours généraux, 
+				nous sommes là pour vous offrir la meilleure assistance possible.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="3">
+			<Card
+				title="Accompagnement client"
+				subtitle="Besoin d'être accompagné dans vos candidatures ? Notre équipe vous répondra avec plaisir !"
+				icon="rocket"
+				classes="text-center dark:!bg-neutral-800/50"
+				link="/contact"
+			/>
+		</Col>
+		<Col span="3">
+			<Card
+				title="Demandes prix"
+				subtitle="Besoin de savoir combien coûte notre accompagnement ? Notre équipe vous répondra avec plaisir !"
+				icon="document-text"
+				classes="text-center dark:!bg-neutral-800/50"
+				link="/contact"
+			/>
+		</Col>
+		<Col span="3">
+			<Card
+				title="Admission et bourse"
+				subtitle="Optez pour l'admission et la bourse d'étude. Les finances ne devraient pas être un obstacle à vos études !"
+				icon="bolt"
+				classes="text-center dark:!bg-neutral-800/50"
+				link="/contact"
+			/>
+		</Col>
+		<Col span="3" classes="flex flex-col gap-6">
+			<Card
+				title="Communauté WWA"
+				subtitle="Rejoignez une communauté d'étudiants et professionnels qui s'entraident dans votre destination académique. "
+				icon="chat-bubble-left-ellipsis"
+				classes="text-center dark:!bg-neutral-800/50"
+				link="/contact"
+			/>
+		</Col>
+	</Row>
+</Section>

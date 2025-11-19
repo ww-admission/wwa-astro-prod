@@ -1,0 +1,70 @@
+---
+// Feature Cards grid Section
+// ------------
+// Description: A grid of cards with feature information in a 4 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+
+// Content
+// - Cards
+import feature01 from '../../../assets/cards/placeholder-1.svg'
+import feature02 from '../../../assets/cards/placeholder-2.svg'
+import feature03 from '../../../assets/cards/placeholder-2.svg'
+import feature04 from '../../../assets/cards/placeholder-2.svg'
+import feature05 from '../../../assets/cards/placeholder-2.svg'
+---
+
+<Section id="features">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">World Wise Admission, c'est un<strong>accompagnement</strong> personnalisé vers vos admissions</h2>
+			<p class="pb-0 text-lg">
+				Un accompagnement sur mesure dans vos candidatures et démarches pour être admis dans les meilleures universités à l'étranger, et commencer vos études universitaires dans les meilleures conditions.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="4">
+			<Card
+				title="Des dizaines d'universités partenaires"
+				subtitle="Peut importe le cursus académique visé, World Wise Admission vous accompagne dans vos démarches de candidature et d'admission dans les universités les plus prisées dans les meilleurs destinations académiques."
+				image={feature01}
+				link="/features"
+			/>
+		</Col>
+		<Col span="4" classes="flex flex-col gap-6">
+			<Card
+				title="Parcours et programmes académiques "
+				subtitle="Une variété de parcours et programmes académiques sont disponibles pour vous aider à trouver celui qui vous convient le mieux."
+				image={feature02}
+				link="/features"
+			/>
+			<Card
+				title="De nombreuses destinations d’études"
+				subtitle="Les universitées partenaires WWA ont été sélectionnées pour leur excellence et les retours d’expériences fait par les anciens étudiants étranger. "
+				image={feature03}
+				link="/features"
+			/>
+		</Col>
+		<Col span="4" classes="flex flex-col gap-6">
+			<Card
+				title="Une équipe pour vous accompagner"
+				subtitle="L'équipe de World Wise Admission regroupe des professionnels de l'orientation qui vous accompagnent dans vos démarches d'admission pour maximiser vos chances d'intégrer l'université idéale. "
+				image={feature04}
+				link="/features"
+			/>
+			<Card
+				title="Un réseaux d'Alumni International"
+				subtitle="Faites partir de nos réseaux d'Alumni International, des étudiants et des professionnels que nous avons accompagés et sur qui vous pourrez compter durant votre intégration et votre vie étudiante à l'étranger."
+				image={feature05}
+				link="/features"
+			/>
+		</Col>
+	</Row>
+</Section>

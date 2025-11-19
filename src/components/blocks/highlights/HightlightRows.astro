@@ -1,0 +1,83 @@
+---
+// Highlights Section
+// ------------
+// Description: A section with a multiple text and image rows.
+
+// Components
+// - UI
+import TextImage from '../basic/TextImage.astro'
+
+// Content
+import highlight01 from '../../../assets/highlights/highlight-01.png'
+import highlight01mobile from '../../../assets/highlights/placeholder-4.svg'
+import highlight02 from '../../../assets/highlights/highlight-02.jpg'
+import highlight02mobile from '../../../assets/highlights/placeholder-4.svg'
+import highlight03 from '../../../assets/highlights/placeholder-3.svg'
+import highlight03mobile from '../../../assets/highlights/placeholder-4.svg'
+import highlight04 from '../../../assets/highlights/highlight-04.png'
+import highlight04mobile from '../../../assets/highlights/placeholder-4.svg'
+
+type HighlightBlock = {
+	title: string
+	text: string
+	image: any
+	mobileImage?: any
+	imageWidth: number
+	imageHeight: number
+	imagePosition: 'left' | 'right'
+}
+const highlightBlocks: HighlightBlock[] = [
+	{
+		title: 'Le parcours qui vous <strong>Correspond</strong>',
+		text: 'Que vous soyez au Lycée et en tran de préparer l\'après BAC, en Bachelor, Master, WWA vous accompagne pour intégrer pour commencer ou poursuivre votre parcours académique dans l\'université que vous convient le plus.',
+		image: highlight01,
+		imageWidth: highlight01.width,
+		imageHeight: highlight01.height,
+		mobileImage: highlight01mobile,
+		imagePosition: 'right'
+	},
+	{
+		title: 'Formalités d\'obtention de <strong>Bourses</strong> d\'études',
+		text: 'Nous vous accompagnons pour obtenir les bourses d\'études dont vous avez besoin pour intégrer votre parcours académique dans l\'université que vous convient le plus en Chine, au Ghana, en Afrque du Sud et dans bien d\'autres destinations académiques.',
+		image: highlight02,
+		mobileImage: highlight02mobile,
+		imageWidth: highlight02.width,
+		imageHeight: highlight02.height,
+		imagePosition: 'left'
+	},
+	{
+		title: 'Un <strong>Accompagnement</strong> de A à Z',
+		text: 'Traduction de vos documents, Elaboration de votre dossier de candidature, Transmission et suivi de votre candidature. Un accompagnement jusqu\'à votre arrivée dans l\'université dans laquelle vous aurez choisi d\'intégrer.',
+		image: highlight03,
+		mobileImage: highlight03mobile,
+		imageWidth: highlight03.width,
+		imageHeight: highlight03.height,
+		imagePosition: 'right'
+	},
+	{
+		title: 'Un accompagnement jusqu\'à votre  <strong>Diplômation</strong>',
+		text: 'Nous vous accompagnons pour obtenir votre diplôme et intégrer votre parcours académique dans l\'université que vous convient le plus.',
+		image: highlight04,
+		mobileImage: highlight04mobile,
+		imageWidth: highlight04.width,
+		imageHeight: highlight04.height,
+		imagePosition: 'left'
+	}
+]
+---
+
+{
+	highlightBlocks.map((highlight, key) => (
+		<TextImage
+			id={`highlight-${key}`}
+			title={highlight.title}
+			text={highlight.text}
+			image={highlight.image}
+			imageWidth={highlight.imageWidth}
+			imageHeight={highlight.imageHeight}
+			mobileImage={highlight.mobileImage}
+			imagePosition={highlight.imagePosition}
+			classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
+		/>
+	))
+}
