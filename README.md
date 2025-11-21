@@ -2,18 +2,18 @@
 
 World Wise Admission est une start-up panafricaine accompagnant les bacheliers et étudiants dans leurs démarches pour étudier à l'étranger, de la candidature à l'admission.
 
-![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/foxi.png)
+![just-the-basics](https://services.qatorze.com/public/wwa-showup-image.png)
 
-[![Visit le site WWA](https://oxygenna-themes.b-cdn.net/foxi-astro/button-demo.svg)](https://foxi.netlify.app)
-[![Contacter Qatôrze](https://oxygenna-themes.b-cdn.net/foxi-astro/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-foxi-netlify-app/c9ig3t85mu?form_factor=desktop)
+[![Visit le site WWA](https://services.qatorze.com/public/wwa-btn-readme-1.png)](https://worldwise-admission.com)
+[![Page Insight du site WWA](https://services.qatorze.com/public/wwa-btn-readme-2.png)](https://pagespeed.web.dev/analysis/https-worldwise-admission-com/skh3uv5a2y?hl=fr&form_factor=desktop)
 
 ## Introduction
 
 ### À Propos
 
-Le site WWA est un site web développé avec Astro et Tailwind CSS. Designé à partir d'un template Astro, taillé pour optimiser les performances, le référencement SEO et offrir une expérience utilisateur agréable grâce à son design simple et moderne et responsive.
+Le site WWA est un site web développé avec AstroJS et Tailwind CSS. Designé à partir d'un template Astro, taillé pour optimiser les performances, le référencement SEO et offrir une expérience utilisateur agréable grâce à son design simple et moderne et responsive.
 
-![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/pagespeedscore.svg)
+![just-the-basics](https://services.qatorze.com/public/wwa-showup-image-2.svg)
 
 ### Fonctionnalités
 
