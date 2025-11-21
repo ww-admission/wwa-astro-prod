@@ -4,8 +4,7 @@ World Wise Admission est une start-up panafricaine accompagnant les bacheliers e
 
 ![just-the-basics](https://services.qatorze.com/public/wwa-showup-image.png)
 
-[![Visit le site WWA](https://services.qatorze.com/public/wwa-btn-readme-1.png)](https://worldwise-admission.com)
-[![Page Insight du site WWA](https://services.qatorze.com/public/wwa-btn-readme-2.png)](https://pagespeed.web.dev/analysis/https-worldwise-admission-com/skh3uv5a2y?hl=fr&form_factor=desktop)
+[![Visit le site WWA](https://services.qatorze.com/public/wwa-btn-readme-1.png)](https://worldwise-admission.com)[![Page Insight du site WWA](https://services.qatorze.com/public/wwa-btn-readme-2.png)](https://pagespeed.web.dev/analysis/https-worldwise-admission-com/skh3uv5a2y?hl=fr&form_factor=desktop)
 
 ## Introduction
 
