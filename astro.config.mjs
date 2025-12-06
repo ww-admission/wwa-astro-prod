@@ -7,7 +7,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://worldwise-admission.com/",
+  site: 'https://worldwise-admission.com',
+  base: '/',
   integrations: [
     tailwind(),
     icon(),
