@@ -106,6 +106,6 @@ export const footerNavigationData: FooterData = {
 		}
 	],
 	subFooter: {
-		copywriteText: '© WWA 2025.'
+		copywriteText: '© WWA - World Wise Admission 2025'
 	}
 }
